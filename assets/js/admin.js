@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-    jQuery('#njt-wa-ads').click(function() {
+    jQuery('#cat_wa-ads').click(function() {
         jQuery.ajax({
             url: ajaxurl,
             type: 'POST',
@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
             }
         }).done(function(result) {
             if (result.success) {
-                jQuery('#njt-wa-ads-wrapper').hide('slow')
+                jQuery('#cat_wa-ads-wrapper').hide('slow')
             } else {
                 console.log("Error", result.data.status)
             }

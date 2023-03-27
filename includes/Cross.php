@@ -91,14 +91,14 @@ if ( !class_exists('NjtCross') ) {
                 if ( !in_array($screen->id , array('plugins', 'dashboard', 'upload')) ) return;
             } else return;
 
-            wp_register_script("njt-popup-{$this->pluginPrefix}-cross", $this->pluginDirURL . 'assets/js/cross.js', ['jquery'], '1.0', true);
-            wp_localize_script("njt-popup-{$this->pluginPrefix}-cross", 'njtCross', array(
+            wp_register_script("cat_popup-{$this->pluginPrefix}-cross", $this->pluginDirURL . 'assets/js/cross.js', ['jquery'], '1.0', true);
+            wp_localize_script("cat_popup-{$this->pluginPrefix}-cross", 'njtCross', array(
                 'nonce' => wp_create_nonce("cat_{$this->pluginPrefix}_cross_nonce"),
                 'media_url' => admin_url('upload.php'),
                 'filebird_install_url' => $url,
                 'show_popup' => $this->showPopup
             ));
-            wp_enqueue_script("njt-popup-{$this->pluginPrefix}-cross");
+            wp_enqueue_script("cat_popup-{$this->pluginPrefix}-cross");
             ?>
             <style>
                 @-webkit-keyframes rotate360{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes rotate360{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@-webkit-keyframes dotLoad{0%{opacity:1}to{opacity:.1}}@keyframes dotLoad{0%{opacity:1}to{opacity:.1}}.fbv-icon{background-color:transparent;background-position:50%;background-repeat:no-repeat;background-size:contain;display:inline-block;height:1em;width:1em}.fbv-i-folder{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2h-8l-2-2z'/%3E%3C/svg%3E")}.fbv-cross-wrap{bottom:45px;position:fixed;right:30px;-webkit-transition:all .4s ease;-o-transition:all .4s ease;transition:all .4s ease;-webkit-transition-delay:.5s;-o-transition-delay:.5s;transition-delay:.5s;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;z-index:100000}.fbv-cross-wrap.fbv_permanent_hide{opacity:0;pointer-events:none}.fbv-cross-link{color:#a1a1a1;font-size:12px;text-decoration:none}.fbv-cross-link:active,.fbv-cross-link:focus,.fbv-cross-link:hover{-webkit-box-shadow:none;box-shadow:none;color:#a1a1a1;opacity:.8;outline:none}.fbv-cross-popup{cursor:pointer;position:relative;z-index:100}.fbv-cross-icon-wrap{background-color:#0085ba;-webkit-box-shadow:0 6px 10px 2px rgba(0,0,0,.1);box-shadow:0 6px 10px 2px rgba(0,0,0,.1);line-height:1;position:relative;height:56px;width:56px;border-radius:56px}.fbv-cross-icon-wrap i{color:#fff;font-size:32px;left:50%;margin-left:-16px;margin-top:-16px;position:absolute;top:50%;-webkit-transition:all .4s ease;-o-transition:all .4s ease;transition:all .4s ease}.fbv-cross-popup-open .fbv-cross-icon-wrap i.fbv-icon{opacity:0;-webkit-transform:rotate(1turn);-ms-transform:rotate(1turn);transform:rotate(1turn)}.fbv-cross-icon-wrap i.dashicons{opacity:0;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);height:auto;width:auto}.fbv-cross-popup-open .fbv-cross-icon-wrap i.dashicons{opacity:1;-webkit-transform:rotate(1turn);-ms-transform:rotate(1turn);transform:rotate(1turn)}.fbv-cross-sub{background-color:#fff;border-radius:3px;-webkit-box-shadow:0 2px 10px 0 rgba(0,0,0,.1);box-shadow:0 2px 10px 0 rgba(0,0,0,.1);color:#0085ba;font-size:14px;font-weight:500;margin:-13px 10px 0 0;padding:4px 12px;position:absolute;right:100%;top:50%;-webkit-transition:all .4s ease;-o-transition:all .4s ease;transition:all .4s ease;white-space:nowrap}.fbv-cross-popup-open .fbv-cross-sub{opacity:0;pointer-events:none;-webkit-transform:translateY(15px);-ms-transform:translateY(15px);transform:translateY(15px);visibility:hidden}.fbv-cross-window{background-color:#fff;border-radius:3px;bottom:100%;-webkit-box-shadow:0 10px 10px 4px rgba(0,0,0,.04);box-shadow:0 10px 10px 4px rgba(0,0,0,.04);margin-bottom:15px;opacity:0;pointer-events:none;position:absolute;right:-5px;-webkit-transform:translateY(50px);-ms-transform:translateY(50px);transform:translateY(50px);-webkit-transition:all .4s ease;-o-transition:all .4s ease;transition:all .4s ease;visibility:hidden;width:360px;z-index:99}.fbv-cross-window-mess{background-color:#0085ba;border-radius:3px 3px 0 0;color:#fff;padding:15px 20px}.fbv-cross-window-mess h3{color:#fff;font-size:14px;margin:0 0 10px}.fbv-cross-window-mess span{font-size:14px;line-height:1.5;opacity:.9}.fbv-cross-window-img-wrap{padding:20px}.fbv-cross-window-img-wrap img{max-width:100%}.fbv-cross-window-btn{padding:5px 20px 25px;text-align:center}.fbv-cross-window-btn .button-primary{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;font-weight:500;height:42px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-bottom:10px;max-width:100%;min-width:162px;padding:0 20px}.fbv-cross-window-btn .button-primary,.fbv-cross-window-btn .button-primary:active,.fbv-cross-window-btn .button-primary:focus,.fbv-cross-window-btn .button-primary:hover{-webkit-box-shadow:none;box-shadow:none;outline:none}.fbv-cross-window-btn .button-primary i{margin-right:8px}.fbv-cross-window-btn .button-primary .dashicons-saved{background-color:#fff;color:#0085ba;font-size:18px;height:18px;width:18px;border-radius:18px}.fbv-cross-window-btn .button-primary.fbv_installing,.fbv-cross-window-btn .button-primary.fbv_installing:active,.fbv-cross-window-btn .button-primary.fbv_installing:focus,.fbv-cross-window-btn .button-primary.fbv_installing:hover{background-color:#e4f7ff;border-color:#e4f7ff;color:#0085ba;cursor:not-allowed}.fbv-cross-window-btn .button-primary.fbv_installing i{-webkit-animation:rotate360 1s linear infinite both;animation:rotate360 1s linear infinite both}.fbv-cross-popup-open .fbv-cross-window{opacity:1;pointer-events:all;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);visibility:visible}.fbv-noti-install-failed{margin-bottom:10px;margin-top:5px}.fbv-noti-install-failed a{font-weight:600}.fbv-label-error{color:#e90808;margin-bottom:2px}.text-dots:after,.text-dots:before{content:"."}.text-dots:after,.text-dots:before,.text-dots span{-webkit-animation:dotLoad 1s linear 1s infinite alternate;animation:dotLoad 1s linear 1s infinite alternate;opacity:.1}.text-dots:before{-webkit-animation-delay:.5s;animation-delay:.5s}.text-dots:after{-webkit-animation-delay:1.5s;animation-delay:1.5s}
@@ -119,12 +119,12 @@ if ( !class_exists('NjtCross') ) {
                 $url = admin_url("plugin-install.php?s={$this->pluginInstallSearching}&tab=search&type=term");
             }
             ?>
-            <div class="notice notice-info is-dismissible" id="njt-ads-wrapper">
-                <div class="njt-d-row njt-justify-between">
-                    <div class="njt-ads-info">
-                    <h4 class="njt-ads-title"><?php _e('Recommend', 'codeastrology-whatsapp') ?></h4>
+            <div class="notice notice-info is-dismissible" id="cat_ads-wrapper">
+                <div class="cat_d-row cat_justify-between">
+                    <div class="cat_ads-info">
+                    <h4 class="cat_ads-title"><?php _e('Recommend', 'codeastrology-whatsapp') ?></h4>
                     <p>To easily manage your files in WordPress media library with folders, please try FileBird plugin.</p>
-                    <div class="njt-btn-row">
+                    <div class="cat_btn-row">
                         <a class="button button-primary" target="_blank" rel="noopener noreferrer" href="<?php echo esc_url($url) ?>">
                             <strong>I'm feeling lucky</strong>
                         </a>
@@ -136,11 +136,11 @@ if ( !class_exists('NjtCross') ) {
                         </a>
                     </div>
                     </div>
-                    <img class="njt-ads-img" src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/FB_Wireframe.png' ?>" alt="filebird">
+                    <img class="cat_ads-img" src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/FB_Wireframe.png' ?>" alt="filebird">
                 </div>
             </div>
             <style>
-                .njt-d-row{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}.njt-justify-between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.njt-ads-info{padding:15px 0 30px}@media screen and (max-width:782px){.njt-ads-info{padding:0}}.njt-ads-info p{margin-bottom:25px}.njt-ads-title{font-size:16px;margin:0 0 15px}.njt-ads-img{max-width:252px}.njt-btn-row{line-height:30px}.njt-btn-row>.button{margin-right:10px}
+                .cat_d-row{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex}.cat_justify-between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.cat_ads-info{padding:15px 0 30px}@media screen and (max-width:782px){.cat_ads-info{padding:0}}.cat_ads-info p{margin-bottom:25px}.cat_ads-title{font-size:16px;margin:0 0 15px}.cat_ads-img{max-width:252px}.cat_btn-row{line-height:30px}.cat_btn-row>.button{margin-right:10px}
             </style>
             <?php
         }
@@ -152,17 +152,17 @@ if ( !class_exists('NjtCross') ) {
         public function add_dashboard_widget(){
             ?>
             <style>
-                #dashboard-widgets .njt-postbox-title-wrap {
+                #dashboard-widgets .cat_postbox-title-wrap {
                     margin: 15px 0;
                 }
-                #dashboard-widgets .njt-postbox-title-wrap>h3 {
+                #dashboard-widgets .cat_postbox-title-wrap>h3 {
                     font-size: 14px;
                     font-weight: 600;
                     padding: 0;
                     margin: 0 0 10px;
                     border: 0;
                 }
-                #dashboard-widgets .njt-postbox-title-wrap>span {
+                #dashboard-widgets .cat_postbox-title-wrap>span {
                         font-size: 14px;
                 opacity: .9;
                     }
@@ -174,8 +174,8 @@ if ( !class_exists('NjtCross') ) {
                     color: #2c7cb9;
                 }
             </style>
-            <div class="njt-wrap-postbox">
-              <div class="njt-postbox-title-wrap">
+            <div class="cat_wrap-postbox">
+              <div class="cat_postbox-title-wrap">
                 <h3>Your WordPress media library is messy?</h3>
                 <span>Start using FileBird to organize your files into folders by drag and drop.</span>
               </div>

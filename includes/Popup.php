@@ -33,7 +33,7 @@ class Popup
         wp_style_add_data('cat-css-popup', 'rtl', 'replace');
 
         //This base script for add_inline_script in shortcode
-        wp_enqueue_script('cat-wa-libs', CAT_WHATSAPP_PLUGIN_URL . 'assets/dist/js/njt-whatsapp.js', [], CAT_WHATSAPP_VERSION, true);
+        wp_enqueue_script('cat-wa-libs', CAT_WHATSAPP_PLUGIN_URL . 'assets/dist/js/cat_whatsapp.js', [], CAT_WHATSAPP_VERSION, true);
 
         if ( function_exists('wp_timezone_string') ) {
             $timezone = wp_timezone_string();

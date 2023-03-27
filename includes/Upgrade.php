@@ -79,7 +79,7 @@ class Upgrade
 
     public function renderNotice(){
         ?>
-            <div class="notice notice-error is-dismissible" id="njt-wa-restore-wrapper">
+            <div class="notice notice-error is-dismissible" id="cat_wa-restore-wrapper">
                 <div style="font-size: 1.3em; font-weight: 600; margin-top: 1em;">
                     <?php _e('WhatsApp database update required', 'codeastrology-whatsapp')?>
                 </div>
@@ -108,7 +108,7 @@ class Upgrade
                         if (result.success) {
                             jQuery('#cat-wa-restore').removeClass("cat-updating-message")
                             jQuery('#cat-wa-restore').hide()
-                            jQuery('#njt-wa-restore-wrapper span').html(result.data.message)
+                            jQuery('#cat_wa-restore-wrapper span').html(result.data.message)
                         } else {
                             alert(result.data.message)
                             console.log("Error", result.data.content)

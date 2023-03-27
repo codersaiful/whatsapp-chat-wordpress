@@ -158,7 +158,7 @@ class PostType
     }
 
     public function ajax_get_account(){
-        check_ajax_referer('njt-wa-gutenberg', 'nonce', true);
+        check_ajax_referer('cat_wa-gutenberg', 'nonce', true);
         $id = sanitize_text_field($_POST['id']);
         $metaInfo = get_post_meta($id, 'cat_wa_account_info', true);
         $metaStyle = get_post_meta($id, 'cat_wa_button_styles', true);

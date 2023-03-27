@@ -104,7 +104,7 @@
             </td>
         </tr>
         <tr class="setting widget-scrollbar">
-            <th scope="row"><label for=""><?php echo __('Widget Scroll Bar', 'codeastrology-whatsapp') ?><span class="dashicons dashicons-editor-help njt-wa-tooltip"></span></label></th>
+            <th scope="row"><label for=""><?php echo __('Widget Scroll Bar', 'codeastrology-whatsapp') ?><span class="dashicons dashicons-editor-help cat_wa-tooltip"></span></label></th>
             <td>
                 <div class="cat-wa-switch-control" style="margin-top: 5px;">
                     <input type="checkbox" id="isShowScroll" name="isShowScroll" <?php checked($option['isShowScroll'], 'ON') ?>>

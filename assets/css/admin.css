@@ -439,17 +439,17 @@ ul.cat-tab-wrapper .nav-tab {
     font-weight: 600;
 }
 
-.dashicons-editor-help.njt-wa-tooltip{
+.dashicons-editor-help.cat_wa-tooltip{
   font-size: 18px;
   color: #a0a0a0;
 }
 
-input.njt-wa-pro, 
-select.njt-wa-pro, 
-select.njt-wa-pro:hover, 
-input.njt-wa-pro:hover,
-select.njt-wa-pro:focus,
-input.njt-wa-pro:focus
+input.cat_wa-pro,
+select.cat_wa-pro,
+select.cat_wa-pro:hover,
+input.cat_wa-pro:hover,
+select.cat_wa-pro:focus,
+input.cat_wa-pro:focus
 {
   background: rgba(255,255,255,.5);
   border-color: rgba(222,222,222,.75);

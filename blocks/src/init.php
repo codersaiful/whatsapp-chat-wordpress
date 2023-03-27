@@ -42,7 +42,7 @@ function cat_wa_block_assets()
 			'pluginDirUrl'  	=> plugin_dir_url(__DIR__),
 			'avatarDefaultUrl' 	=> CAT_WHATSAPP_PLUGIN_URL . 'assets/img/whatsapp_logo.svg',
 			'gutenbergPreview'  => CAT_WHATSAPP_PLUGIN_URL . 'assets/img/whatsapp-button-preview.png',
-			'nonce'				=> wp_create_nonce('njt-wa-gutenberg')
+			'nonce'				=> wp_create_nonce('cat_wa-gutenberg')
 			// Add more data here that you want to access from `cgbGlobal` object.
 		]
 	);

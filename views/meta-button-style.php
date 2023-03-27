@@ -54,7 +54,7 @@
     var buttonStyles = <?php echo json_encode($buttonStyles); ?>
 </script>
 <script type="text/template" id="button-preview">
-    <div id="njt-wabutton">
+    <div id="cat_wabutton">
         <a href="javascript:;" class="wa__stt_online wa__button <%= buttonStyles.buttonClass %>">
             <% if (_.isEmpty(buttonStyles.avatar)) { %>
                 <div class="wa__btn_icon">

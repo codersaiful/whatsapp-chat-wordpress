@@ -89,9 +89,9 @@
         </td>
         </tr>
         <tr>
-            <th scope="row"><label for="njt-post-selector"><?php echo __('Display on Posts', 'codeastrology-whatsapp') ?></label></th>
+            <th scope="row"><label for="cat_post-selector"><?php echo __('Display on Posts', 'codeastrology-whatsapp') ?></label></th>
             <td>
-                <select name="includePosts[]" id="njt-post-selector" multiple>
+                <select name="includePosts[]" id="cat_post-selector" multiple>
                     <?php foreach ($option['includePosts'] as $postId): ?>
                         <option value="<?php echo esc_attr($postId) ?>" selected="selected">
                             <?php echo esc_html( sprintf(__( '%1$s (ID: %2$s)', 'codeastrology-whatsapp' ), get_the_title( $postId ), $postId )) ?>

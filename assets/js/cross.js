@@ -78,7 +78,7 @@ jQuery(document).ready(function () {
       }
     }).done(function(result) {
       if (result.success) {
-        jQuery('#njt-ads-wrapper button.notice-dismiss').click()
+        jQuery('#cat_ads-wrapper button.notice-dismiss').click()
       } else {
         console.log("Error", result.data.status)
       }

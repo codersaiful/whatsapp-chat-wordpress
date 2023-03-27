@@ -142,7 +142,7 @@ class Settings
         );
         wp_localize_script('cat-wa-js', 'cat_wa', [
             'url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('njt-wa-nonce'),
+            'nonce' => wp_create_nonce('cat_wa-nonce'),
             'settings' => [
                 'widget' => [
                     'styles' => Fields::getWidgetStyles()
@@ -253,7 +253,7 @@ class Settings
 
     public function save_display_setting()
     {
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
         $new_input = [];
 
         $excludePages = Helper::sanitize_array($_POST['excludePages']);
@@ -277,7 +277,7 @@ class Settings
 
     public function save_design_setting()
     {
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
 
         $new_input = [];
 
@@ -309,7 +309,7 @@ class Settings
     }
 
     public function save_woocommerce_setting(){
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
 
         $new_input = [];
 
@@ -322,7 +322,7 @@ class Settings
     }
 
     public function save_analytics_setting(){
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
 
         $new_input = [];
 
@@ -336,7 +336,7 @@ class Settings
     }
 
     public function save_url_setting(){
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
 
         $new_input = [];
 
@@ -351,7 +351,7 @@ class Settings
 
     public function set_account_position()
     {
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
 
         $positions = Helper::sanitize_array($_POST['positions']);
         $type = sanitize_text_field($_POST['type']);
@@ -365,7 +365,7 @@ class Settings
 
     public function load_accounts_ajax()
     {
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
         $postType = PostType::getInstance();
         $accountsList = $postType->get_posts();
         $results = array_map(function ($account) {
@@ -392,7 +392,7 @@ class Settings
 
     public function set_account_status()
     {
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
         $id = sanitize_text_field($_POST['accountId']);
         $type = sanitize_text_field($_POST['type']);
         $status = sanitize_text_field($_POST['status']);
@@ -415,7 +415,7 @@ class Settings
     public function get_posts(){
         ob_start();
 
-        check_ajax_referer('njt-wa-nonce', 'nonce', true);
+        check_ajax_referer('cat_wa-nonce', 'nonce', true);
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			wp_die( -1 );
