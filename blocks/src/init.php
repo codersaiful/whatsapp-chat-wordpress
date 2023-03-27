@@ -36,7 +36,7 @@ function cat_wa_block_assets()
 	// WP Localized globals. Use dynamic PHP stuff in JavaScript via `cgbGlobal` object.
 	wp_localize_script(
 		'block-cgb-block-js',
-		'njtwa', // Array containing dynamic data for a JS Global.
+		'catwa', // Array containing dynamic data for a JS Global.
 		[
 			'pluginDirPath' 	=> plugin_dir_path(__DIR__),
 			'pluginDirUrl'  	=> plugin_dir_url(__DIR__),

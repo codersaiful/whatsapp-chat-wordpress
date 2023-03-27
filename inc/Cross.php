@@ -92,7 +92,7 @@ if ( !class_exists('NjtCross') ) {
             } else return;
 
             wp_register_script("cat_popup-{$this->pluginPrefix}-cross", $this->pluginDirURL . 'assets/js/cross.js', ['jquery'], '1.0', true);
-            wp_localize_script("cat_popup-{$this->pluginPrefix}-cross", 'njtCross', array(
+            wp_localize_script("cat_popup-{$this->pluginPrefix}-cross", 'catCross', array(
                 'nonce' => wp_create_nonce("cat_{$this->pluginPrefix}_cross_nonce"),
                 'media_url' => admin_url('upload.php'),
                 'filebird_install_url' => $url,

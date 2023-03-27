@@ -93,7 +93,7 @@ class Settings
     {
         $screen = get_current_screen();
         if ($screen->base !== $this->floatingWidgetSlug) return;
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/design-preview.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/design-preview.php';
     }
 
     public function admin_enqueue_scripts($hook_suffix)
@@ -165,7 +165,7 @@ class Settings
         $option = Fields::getWidgetDisplay();
         $option['time_symbols'] = explode(":", $option['time_symbols']);
         $pages = $wpdb->get_results("Select ID, post_title from {$wpdb->posts} where post_type = 'page' and post_status = 'publish'");
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/display-settings.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/display-settings.php';
     }
 
     public function page_design_settings_section_callback()
@@ -183,40 +183,40 @@ class Settings
             'quicktags' => true,
             'teeny' => true,
         ];
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/design-settings.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/design-settings.php';
     }
 
     public function page_selected_accounts_section_callback()
     {
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/selected-accounts.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/selected-accounts.php';
     }
 
     public function woocommerce_button_callback()
     {
         $option = Fields::getWoocommerceSetting();
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/woocommerce-button.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/woocommerce-button.php';
     }
 
     public function analytics_callback()
     {
         $option = Fields::getAnalyticsSetting();
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/analytics.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/analytics.php';
     }
 
     public function url_callback()
     {
         $option = Fields::getURLSettings();
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/url-settings.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/url-settings.php';
     }
 
     public function create_page_setting_widget()
     {
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/settings.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/settings.php';
     }
 
     public function floating_widget_view()
     {
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/floating-widget-settings.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/floating-widget-settings.php';
     }
 
     public function register_setting()

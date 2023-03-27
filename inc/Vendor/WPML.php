@@ -1,5 +1,5 @@
 <?php
-namespace CAT_WhatsApp\Support;
+namespace CAT_WhatsApp\Vendor;
 
 defined('ABSPATH') || exit;
 

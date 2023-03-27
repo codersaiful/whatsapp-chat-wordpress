@@ -233,7 +233,7 @@ class PostType
             $meta['cat_wa_wc_show'] = get_post_meta($post->ID, 'cat_wa_wc_show', true);
             $meta['cat_wa_wc_position'] = get_post_meta($post->ID, 'cat_wa_wc_position', true);
         }
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/meta-accounts.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/meta-accounts.php';
     }
 
     public function account_shortcode_form()
@@ -250,7 +250,7 @@ class PostType
         $buttonStyles = Fields::getButtonStyles($post->ID);
         $buttonStyles['avatar'] = get_the_post_thumbnail_url($post->ID);
         $buttonStyles['title'] = $post->post_title;
-        require CAT_WHATSAPP_PLUGIN_DIR . 'views/meta-button-style.php';
+        require CAT_WHATSAPP_PLUGIN_DIR . 'admin/meta-button-style.php';
     }
 
     public function manager_accounts_columns($columns)

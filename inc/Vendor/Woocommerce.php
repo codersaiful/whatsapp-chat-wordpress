@@ -1,5 +1,5 @@
 <?php
-namespace CAT_WhatsApp\Support;
+namespace CAT_WhatsApp\Vendor;
 
 use CAT_WhatsApp\Fields;
 use CAT_WhatsApp\PostType;

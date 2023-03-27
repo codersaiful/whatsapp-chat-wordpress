@@ -1,10 +1,10 @@
 (function () {
-  njtWhatsApp.ready(function () {
+  catWhatsApp.ready(function () {
     const init = function () {
       document.querySelectorAll(".cat_wa_button").forEach(function (element) {
         if (element._isWaButton) return
         const info = JSON.parse(element.getAttribute('data-info'))
-        njtWhatsApp.createButton(element, {
+        catWhatsApp.createButton(element, {
           ...info,
           timezone: cat_wa_global.timezone,
           i18n: cat_wa_global.i18n,

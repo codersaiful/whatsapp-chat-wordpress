@@ -24,7 +24,7 @@ jQuery(document).ready(function () {
     </div>
   </div>`
 
-  const install_failed = `<div class="fbv-noti-install-failed"><div class="fbv-label-error">Oops! Installation failed.</div><div>Please try <a href="${njtCross.filebird_install_url}">manual installation</a>.</div></div>`
+  const install_failed = `<div class="fbv-noti-install-failed"><div class="fbv-label-error">Oops! Installation failed.</div><div>Please try <a href="${catCross.filebird_install_url}">manual installation</a>.</div></div>`
 
   jQuery.fn.exists = function (callback) {
     var args = [].slice.call(arguments, 1)
@@ -34,7 +34,7 @@ jQuery(document).ready(function () {
     return this
   }
   jQuery('body.upload-php #wpfooter').exists(function () {
-    njtCross.show_popup && this.append(fbv_cross)
+    catCross.show_popup && this.append(fbv_cross)
   })
   jQuery('.fbv-cross-popup').click(function () {
     jQuery(this).parent().toggleClass('fbv-cross-popup-open')
@@ -47,7 +47,7 @@ jQuery(document).ready(function () {
       method: 'POST',
       data: {
         action: 'cat_filebird_cross_hide',
-        nonce: njtCross.nonce,
+        nonce: catCross.nonce,
         type: 'popup'
       },
       beforeSend: function(){
@@ -73,7 +73,7 @@ jQuery(document).ready(function () {
       dataType: 'json',
       data: {
         action: 'cat_filebird_cross_hide',
-        nonce: njtCross.nonce,
+        nonce: catCross.nonce,
         type: 'notification'
       }
     }).done(function(result) {
@@ -97,7 +97,7 @@ jQuery(document).ready(function () {
       method: 'POST',
       data: {
           action: 'cat_filebird_cross_install',
-          nonce: njtCross.nonce
+          nonce: catCross.nonce
       },
       beforeSend: function(){
         a.focusout()
@@ -109,7 +109,7 @@ jQuery(document).ready(function () {
           a.removeClass('fbv_installing').addClass('fbv_done')
           a.html(done)
           a.off('click')
-          a.click(()=> { window.location.href = njtCross.media_url })
+          a.click(()=> { window.location.href = catCross.media_url })
         } else {
           a.removeClass('fbv_installing').addClass('fbv_error')
           a.parent().after(install_failed)

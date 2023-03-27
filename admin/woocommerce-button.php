@@ -21,7 +21,7 @@ use CAT_WhatsApp\Helper;
                         <input type="radio" id="cat-wa_before_atc" name="position" value="before_atc" <?php checked($option['position'], 'before_atc') ?>>
                         <label for="cat-wa_before_atc">
                             <div class="cat-wa-radio-img-wrap">
-                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/woo_settings/before_add_to_cart.png' ?>">
+                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/wc_settings/before_add_to_cart.png' ?>">
                             </div>    
                             <span><?php echo __('Before Add to Cart button', 'codeastrology-whatsapp') ?></span>
                         </label>
@@ -30,7 +30,7 @@ use CAT_WhatsApp\Helper;
                         <input type="radio" id="cat-wa_after_atc" name="position" value="after_atc" <?php checked($option['position'], 'after_atc') ?>>
                         <label for="cat-wa_after_atc">
                             <div class="cat-wa-radio-img-wrap">
-                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/woo_settings/after_add_to_cart.png' ?>">
+                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/wc_settings/after_add_to_cart.png' ?>">
                             </div>    
                             <span><?php echo __('After Add to Cart button', 'codeastrology-whatsapp') ?></span>
                         </label>
@@ -39,7 +39,7 @@ use CAT_WhatsApp\Helper;
                         <input type="radio" id="cat-wa_after_short_description" name="position" value="after_short_description" <?php checked($option['position'], 'after_short_description') ?>>
                         <label for="cat-wa_after_short_description">
                             <div class="cat-wa-radio-img-wrap">
-                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/woo_settings/after_short_desc.png' ?>">
+                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/wc_settings/after_short_desc.png' ?>">
                             </div>
                             <span><?php echo __('After short description', 'codeastrology-whatsapp') ?></span>
                         </label>
@@ -48,7 +48,7 @@ use CAT_WhatsApp\Helper;
                         <input type="radio" id="cat-wa_after_long_description" name="position" value="after_long_description" <?php checked($option['position'], 'after_long_description') ?>>
                         <label for="cat-wa_after_long_description">
                             <div class="cat-wa-radio-img-wrap">
-                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/woo_settings/after_long_desc.png' ?>">
+                                <img src="<?php echo CAT_WHATSAPP_PLUGIN_URL . 'assets/img/wc_settings/after_long_desc.png' ?>">
                             </div>
                             <span><?php echo __('After long description', 'codeastrology-whatsapp') ?></span>
                         </label>

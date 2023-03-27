@@ -15,7 +15,7 @@ namespace CAT_WhatsApp;
 defined( 'ABSPATH' ) || exit;
 
 if ( function_exists( 'CAT_WhatsApp\\init' ) ) {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/Fallback.php';
+	require_once plugin_dir_path( __FILE__ ) . 'inc/Fallback.php';
 	add_action(
 		'admin_init',
 		function() {
@@ -41,14 +41,14 @@ if ( ! defined( 'CAT_WHATSAPP_BASE_NAME' ) ) {
 	define( 'CAT_WHATSAPP_BASE_NAME', plugin_basename( __FILE__ ) );
 }
 
-// if (file_exists(dirname(__FILE__) . '/includes/Cross.php')) {
-//     require_once dirname(__FILE__) . '/includes/Cross.php';
+// if (file_exists(dirname(__FILE__) . '/inc/Cross.php')) {
+//     require_once dirname(__FILE__) . '/inc/Cross.php';
 // }
 
 spl_autoload_register(
 	function ( $class ) {
 		$prefix   = __NAMESPACE__; // project-specific namespace prefix
-		$base_dir = __DIR__ . '/includes'; // base directory for the namespace prefix
+		$base_dir = __DIR__ . '/inc'; // base directory for the namespace prefix
 
 		$len = strlen( $prefix );
 		if ( strncmp( $prefix, $class, $len ) !== 0 ) { // does the class use the namespace prefix?
@@ -68,8 +68,8 @@ spl_autoload_register(
 	}
 );
 
-if ( file_exists( dirname( __FILE__ ) . '/includes/Review.php' ) ) {
-	require_once dirname( __FILE__ ) . '/includes/Review.php';
+if ( file_exists( dirname( __FILE__ ) . '/inc/Review.php' ) ) {
+	require_once dirname( __FILE__ ) . '/inc/Review.php';
 }
 
 if ( ! function_exists( 'CAT_WhatsApp\\init' ) ) {
@@ -81,8 +81,8 @@ if ( ! function_exists( 'CAT_WhatsApp\\init' ) ) {
 		Popup::getInstance();
 		Settings::getInstance();
 		Upgrade::getInstance();
-		Support\WPML::getInstance();
-		Support\Woocommerce::getInstance();
+		Vendor\WPML::getInstance();
+		Vendor\Woocommerce::getInstance();
 		if ( function_exists( 'register_block_type' ) ) {
 			require_once dirname( __FILE__ ) . '/blocks/src/init.php';
 		}

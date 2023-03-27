@@ -1,6 +1,6 @@
 (function() {
-  njtWhatsApp.ready(function() {
-    njtWhatsApp.createWidget(document.querySelector("#wa"),{
+  catWhatsApp.ready(function() {
+    catWhatsApp.createWidget(document.querySelector("#wa"),{
       accounts: cat_wa.accounts,
       timezone: cat_wa_global.timezone,
       gdprStatus: cat_wa.gdprStatus,
