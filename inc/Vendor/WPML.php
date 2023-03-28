@@ -21,7 +21,7 @@ class WPML
 
         if ($sitepress !== null && get_class($sitepress) === 'SitePress') {
             $settings = $sitepress->get_setting('custom_posts_sync_option', array());
-            $post_type = 'whatsapp-accounts';
+            $post_type = 'cat_wa_accounts';
             if (isset($settings[$post_type]) && ($settings[$post_type] == 1 || $settings[$post_type] == 2)) {
                 $this->isActive = true;
                 add_filter('cat_wa_get_post_type', array($this, 'getPostType'), 10, 1);

@@ -81,7 +81,7 @@ class Settings
 
     public function admin_menu()
     {
-        $edit_account_link = 'post-new.php?post_type=whatsapp-accounts';
+        $edit_account_link = 'post-new.php?post_type=cat_wa_accounts';
 
         add_menu_page('CAT Whatsapp', 'WhatsApp', 'manage_options', 'cat_whatsapp', [$this, 'create_page_setting_widget'], CAT_WHATSAPP_PLUGIN_URL . 'assets/img/whatsapp-menu.svg', 60);
         add_submenu_page('cat_whatsapp', __('Add New account', 'codeastrology-whatsapp'), __('Add New account', 'codeastrology-whatsapp'), 'manage_options', $edit_account_link);
@@ -99,7 +99,7 @@ class Settings
     public function admin_enqueue_scripts($hook_suffix)
     {
         if ($hook_suffix === 'edit.php' || $hook_suffix === 'post-new.php' || $hook_suffix === 'post.php') {
-            if (get_post_type() !== 'whatsapp-accounts') return;
+            if (get_post_type() !== 'cat_wa_accounts') return;
         } else {
             if (!in_array($hook_suffix, [$this->settingSlug, $this->floatingWidgetSlug])) {
                 return;

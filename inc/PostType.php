@@ -26,11 +26,11 @@ class PostType
 
     private function doHooks(){
         add_action('init', array($this, 'register_post_type')); 
-        add_action('save_post_whatsapp-accounts', [$this, 'save_account'], 10, 3);
+        add_action('save_post_cat_wa_accounts', [$this, 'save_account'], 10, 3);
         add_action('add_meta_boxes', [$this, 'add_meta_boxes']);
 
-        add_filter('manage_whatsapp-accounts_posts_columns', [$this, 'manager_accounts_columns'], 10, 1);
-        add_action('manage_whatsapp-accounts_posts_custom_column', [$this, 'manager_accounts_show_columns'], 10, 2);
+        add_filter('manage_cat_wa_accounts_posts_columns', [$this, 'manager_accounts_columns'], 10, 1);
+        add_action('manage_cat_wa_accounts_posts_custom_column', [$this, 'manager_accounts_show_columns'], 10, 2);
         add_filter('enter_title_here', [$this, 'replace_title'], 20, 2);
         add_action('wp_print_scripts', [$this, 'disable_autosave']);
 
@@ -63,7 +63,7 @@ class PostType
             'show_in_rest' => true,
             'show_in_menu' => 'cat_whatsapp',
             'menu_position' => 100,
-            'query_var' => 'whatsapp-accounts',
+            'query_var' => 'cat_wa_accounts',
             'supports' => array(
                 'title',
                 'thumbnail',
@@ -79,27 +79,27 @@ class PostType
                 'read_private_posts' => 'manage_options'
             ),
         );
-        register_post_type('whatsapp-accounts', $args);
+        register_post_type('cat_wa_accounts', $args);
     }
 
     public function add_meta_boxes(){
         $current_screen = get_current_screen();
 
-        add_meta_box('whatsapp-account-info', 'WhatsApp Account Information', [$this, 'meta_form_account'], 'whatsapp-accounts', 'normal');
-        add_meta_box('whatsapp-button-style', 'Button Style', [$this, 'meta_form_button_style'], 'whatsapp-accounts', 'normal');
+        add_meta_box('whatsapp-account-info', 'WhatsApp Account Information', [$this, 'meta_form_account'], 'cat_wa_accounts', 'normal');
+        add_meta_box('whatsapp-button-style', 'Button Style', [$this, 'meta_form_button_style'], 'cat_wa_accounts', 'normal');
         if ($current_screen->action !== 'add') {
-            add_meta_box('whatsapp-button-shortcode', 'Shortcode for this account', [$this, 'account_shortcode_form'], 'whatsapp-accounts', 'side');
+            add_meta_box('whatsapp-button-shortcode', 'Shortcode for this account', [$this, 'account_shortcode_form'], 'cat_wa_accounts', 'side');
         }
     }
 
     public function disable_autosave() {    
-        if (get_post_type() === 'whatsapp-accounts') {
+        if (get_post_type() === 'cat_wa_accounts') {
             wp_deregister_script('autosave');
         }
     }
 
     public function replace_title($title, $post){
-        if ($post->post_type == 'whatsapp-accounts') {
+        if ($post->post_type == 'cat_wa_accounts') {
             $my_title = "Account Name";
             return $my_title;
         }
@@ -110,7 +110,7 @@ class PostType
     public function get_posts($argsQuery = array())
     {
         $defaultArgs = array(
-            'post_type' => 'whatsapp-accounts',
+            'post_type' => 'cat_wa_accounts',
             'post_status' => 'publish',
             'numberposts' => -1,
         );

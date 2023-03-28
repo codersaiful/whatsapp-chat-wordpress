@@ -31,7 +31,7 @@ class Upgrade
 
         if ($restored === false || $restored == 0) {
             $old_posts = get_posts(array(
-                'post_type' => 'whatsapp-accounts',
+                'post_type' => 'cat_wa_accounts',
                 'post_status' => 'any',
                 'numberposts' => -1,
                 'fields' => 'ids'
@@ -173,7 +173,7 @@ class Upgrade
     public function restoreMeta($cleanBefore = false)
     {
         $old_posts = get_posts(array(
-            'post_type' => 'whatsapp-accounts',
+            'post_type' => 'cat_wa_accounts',
             'post_status' => 'any',
             'numberposts' => -1,
             'meta_query' => array(

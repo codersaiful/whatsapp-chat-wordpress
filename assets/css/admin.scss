@@ -138,7 +138,9 @@ and open the template in the editor.
 }
 
 /*All Accounts Admin Page*/
+
 /*Selected Account*/
+
 #cat_wa_avatar {
   width: 8%;
 }
@@ -249,11 +251,12 @@ ul.cat-tab-wrapper .nav-tab {
 }
 
 /* End of duplication */
-.cat-wa-switch-control input[type=checkbox] {
+
+.cat-wa-switch-control input[type="checkbox"] {
   display: none;
 }
 
-.cat-wa-switch-control input[type=checkbox] + label {
+.cat-wa-switch-control input[type="checkbox"] + label {
   display: inline-block;
   width: 40px;
   height: 20px;
@@ -263,8 +266,8 @@ ul.cat-tab-wrapper .nav-tab {
   box-sizing: border-box;
 }
 
-.cat-wa-switch-control input[type=checkbox] + label:after,
-.cat-wa-switch-control input[type=checkbox] + label:before {
+.cat-wa-switch-control input[type="checkbox"] + label:after,
+.cat-wa-switch-control input[type="checkbox"] + label:before {
   content: "";
   display: block;
   position: absolute;
@@ -274,6 +277,7 @@ ul.cat-tab-wrapper .nav-tab {
   height: 20px; */
   transition: 0.3s;
   cursor: pointer;
+
 }
 
 /* Switch input */
@@ -302,8 +306,11 @@ ul.cat-tab-wrapper .nav-tab {
 }
 
 /* Switch input */
+
 /* JQUERY UI AUTOCOMPLE CUSTOM */
-.whatsapp_page_floating-widget-whatsapp .ui-autocomplete .ui-menu-item.ui-state-focus {
+.whatsapp_page_floating-widget-whatsapp
+.ui-autocomplete
+.ui-menu-item.ui-state-focus {
   background-color: #f7f9fb;
 }
 
@@ -369,6 +376,7 @@ ul.cat-tab-wrapper .nav-tab {
   font-size: 14px;
 }
 
+
 @media screen and (max-width: 782px) {
   .meta-button-style {
     display: block;
@@ -377,7 +385,6 @@ ul.cat-tab-wrapper .nav-tab {
   .meta-button-style > div {
     width: unset;
   }
-
   .meta-button-style .preview-button p {
     position: static;
   }
@@ -386,6 +393,7 @@ ul.cat-tab-wrapper .nav-tab {
     flex-direction: column;
   }
 }
+
 .cat-wa-border-box,
 .cat-wa-border-box *,
 .cat-wa-border-box :before,
@@ -427,7 +435,7 @@ ul.cat-tab-wrapper .nav-tab {
   padding: 10px;
   height: 155px;
   margin-bottom: 10px;
-  transition: all 0.3s;
+  transition: all .3s;
   width: 200px;
 }
 
@@ -454,10 +462,10 @@ select.cat_wa-pro:hover,
 input.cat_wa-pro:hover,
 select.cat_wa-pro:focus,
 input.cat_wa-pro:focus {
-  background: rgba(255, 255, 255, 0.5);
-  border-color: rgba(222, 222, 222, 0.75);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
-  color: rgba(51, 51, 51, 0.5);
+  background: rgba(255, 255, 255, .5);
+  border-color: rgba(222, 222, 222, .75);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 4%);
+  color: rgba(51, 51, 51, .5);
 }
 
 /* Widget Preview Styles */
@@ -522,11 +530,12 @@ ul.cat-tab-wrapper .nav-tab {
   align-items: center;
   padding: 9px 27px;
   border-radius: 8px;
-}
-ul.cat-tab-wrapper .nav-tab.nav-tab-active, ul.cat-tab-wrapper .nav-tab:hover {
-  color: #5E2EFF;
-  background: #ffffff;
-  box-shadow: 0px 6px 6px rgba(53, 66, 134, 0.1);
+
+  &.nav-tab-active, &:hover {
+    color: #5E2EFF;
+    background: #ffffff;
+    box-shadow: 0px 6px 6px rgba(53, 66, 134, 0.1);
+  }
 }
 
 button.button.button-large.button-primary.wa-save {
@@ -544,10 +553,11 @@ button.button.button-large.button-primary.wa-save {
   text-transform: capitalize;
   transition: all 0.3s ease-in-out 0s;
   transition-property: color, background, border, box-shadow;
-}
-button.button.button-large.button-primary.wa-save:hover {
-  background: #5E2EFF;
-  color: #ffffff;
+
+  &:hover {
+    background: #5E2EFF;
+    color: #ffffff;
+  }
 }
 
 #cat-wa-switch:checked + label.green, .cat-wa-switch-control input:checked + label.green {
@@ -558,5 +568,3 @@ button.button.button-large.button-primary.wa-save:hover {
 #cat-wa-switch:checked + label.green:after, .cat-wa-switch-control input:checked + label.green:after {
   background: #ffffff;
 }
-
-/*# sourceMappingURL=admin.css.map */

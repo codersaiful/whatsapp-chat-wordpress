@@ -62,7 +62,7 @@ if ( !class_exists('NjtReview') ) {
 
         public function add_notification() {
             if (function_exists('get_current_screen')) {
-                if (get_current_screen()->id == 'plugins' || get_post_type() == 'whatsapp-accounts' ) {
+                if (get_current_screen()->id == 'plugins' || get_post_type() == 'cat_wa_accounts' ) {
                     $selector = esc_attr($this->pluginPrefix) . '-review';
                     ?>
                     <div class="notice notice-success is-dismissible" id="<?php echo $selector ?>">
