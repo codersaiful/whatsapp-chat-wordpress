@@ -1,9 +1,9 @@
 .range {
-  --primaryColor: #5cb85c;
+  --primaryColor: #5E2EFF;
   --value-active-color: white;
   --value-background: white;
   --value-font: 700 12px/1 Arial;
-  --progress-color: #aedcae;
+  --progress-color: #d2c4fc;
   --progress-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1) inset;
   --fill-color: var(--primaryColor);
   --thumb-size: 16px;

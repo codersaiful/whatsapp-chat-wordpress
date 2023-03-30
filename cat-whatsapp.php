@@ -75,14 +75,14 @@ if ( file_exists( dirname( __FILE__ ) . '/inc/Review.php' ) ) {
 if ( ! function_exists( 'CAT_WhatsApp\\init' ) ) {
 	function init() {
 		Plugin::activate();
-		PostType::getInstance();
+		PostType::run();
 		I18n::loadPluginTextdomain();
-		Shortcode::getInstance();
-		Popup::getInstance();
-		Settings::getInstance();
-		Upgrade::getInstance();
-		Vendor\WPML::getInstance();
-		Vendor\Woocommerce::getInstance();
+		Shortcode::run();
+		Popup::run();
+		Settings::run();
+		Upgrade::run();
+		Vendor\WPML::run();
+		Vendor\Woocommerce::run();
 		if ( function_exists( 'register_block_type' ) ) {
 			require_once dirname( __FILE__ ) . '/blocks/src/init.php';
 		}

@@ -8,11 +8,11 @@ class Upgrade
 {
     protected static $instance = null;
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
-            self::$instance->doHooks();
+            self::$instance->runHooks();
         }
         return self::$instance;
     }
@@ -21,7 +21,7 @@ class Upgrade
     {
     }
 
-    public function doHooks(){
+    public function runHooks(){
         add_action('admin_init', [$this, 'init']);
     }
 

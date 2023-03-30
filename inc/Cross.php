@@ -25,7 +25,7 @@ if ( !class_exists('NjtCross') ) {
         {
             if (null == self::$instance) {
                 self::$instance = new static($pluginPrefix, $pluginInstallSearching, $pluginDirURL, $pluginFolderSlug);
-                self::$instance->doHooks();
+                self::$instance->runHooks();
             }
             return self::$instance;
         }
@@ -48,7 +48,7 @@ if ( !class_exists('NjtCross') ) {
             return false; 
         }
     
-        public function doHooks() {
+        public function runHooks() {
             add_action('init', function(){
                 if (!$this->is_plugin_exist()) {
                     $notificationOption = get_option("cat_notification_{$this->pluginPrefix}_cross"); //Save the next time notification will appear
@@ -275,7 +275,7 @@ if ( !class_exists('FileBirdCross') ) {
         public function is_plugin_exist()
         {
             return ( 
-                defined('NJT_FILEBIRD_VERSION') || 
+                defined('CAT_FILEBIRD_VERSION') || 
                 defined('NJFB_VERSION') || 
                 parent::is_plugin_exist() 
             );

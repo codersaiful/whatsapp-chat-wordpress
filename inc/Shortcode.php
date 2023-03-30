@@ -9,16 +9,16 @@ class Shortcode
     protected static $instance = null;
     protected $accountID;
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
-            self::$instance->doHooks();
+            self::$instance->runHooks();
         }
         return self::$instance;
     }
 
-    private function doHooks(){
+    private function runHooks(){
         add_shortcode('catwa_button', [$this, 'button_shortcode']);
     }
 

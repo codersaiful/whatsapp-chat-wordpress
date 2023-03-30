@@ -24,12 +24,12 @@ if ( !class_exists('NjtReview') ) {
         {
             if (null == self::$instance) {
                 self::$instance = new self($pluginPrefix, $pluginName, $textDomain);
-                self::$instance->doHooks();
+                self::$instance->runHooks();
             }
             return self::$instance;
         }
 
-        public function doHooks() {
+        public function runHooks() {
             $option = get_option("{$this->pluginPrefix}_review");
             if (time() >= (int)$option && $option !== '1'){
                 add_action('admin_notices', array($this, 'add_notification'));
@@ -127,9 +127,9 @@ if ( !class_exists('NjtReview') ) {
     }
 }
 
-if ( !class_exists('NJTWhatsAppReview') ) {
-    class NJTWhatsAppReview extends NjtReview {}
-    NJTWhatsAppReview::get_instance('cat_wa', 'WhatsApp Plugin', 'codeastrology-whatsapp');
+if ( !class_exists('CATWhatsAppReview') ) {
+    class CATWhatsAppReview extends NjtReview {}
+    CATWhatsAppReview::get_instance('cat_wa', 'WhatsApp Plugin', 'codeastrology-whatsapp');
 }
 
 

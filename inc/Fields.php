@@ -8,7 +8,7 @@ class Fields
 {
     protected static $instance = null;
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
@@ -71,6 +71,7 @@ class Fields
             get_option('cat_wa_widget_styles', array()),
             array(
                 'title' => __("Start a Conversation", "codeastrology-whatsapp"),
+                'info' => __("Start a Conversation With Team", "codeastrology-whatsapp"),
                 "responseText" => __("The team typically replies in a few minutes.", "codeastrology-whatsapp"),
                 'description' => __("Hi! Click one of our member below to chat on <strong>WhatsApp</strong>", "codeastrology-whatsapp"),
                 'backgroundColor' => "#2db742",

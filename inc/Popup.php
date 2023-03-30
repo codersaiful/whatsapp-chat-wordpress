@@ -9,11 +9,11 @@ class Popup
 {
     protected static $instance = null;
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
-            self::$instance->doHooks();
+            self::$instance->runHooks();
         }
         return self::$instance;
     }
@@ -22,7 +22,7 @@ class Popup
     {
     }
 
-    private function doHooks(){
+    private function runHooks(){
         add_action('wp_enqueue_scripts', [$this, 'enqueue_global_scripts_styles']);
         add_action('wp_footer', [$this, 'show_widget']);
     }
@@ -127,7 +127,7 @@ class Popup
 
     public function get_accounts_active_and_meta(){
         $results  = array();
-		$accounts = PostType::getInstance()->get_active_widget_accounts();
+		$accounts = PostType::run()->get_active_widget_accounts();
 		foreach ( $accounts as $account ) {
 			$meta   = get_post_meta( $account->ID, 'cat_wa_account_info', true );
 			$avatar = get_the_post_thumbnail_url( $account->ID );

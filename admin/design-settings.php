@@ -23,6 +23,11 @@
             <td><input name="title" placeholder="Start a Conversation" type="text" id="title" value="<?php echo esc_attr($option['title']) ?>" class="regular-text"></td>
         </tr>
 
+        <tr class="setting widget-info">
+            <th scope="row"><label for="title"><?php echo __('Widget Info', 'codeastrology-whatsapp') ?></label></th>
+            <td><input name="info" placeholder="Start a Conversation With Team" type="text" id="info" value="<?php echo esc_attr($option['info']) ?>" class="regular-text"></td>
+        </tr>
+
         <tr class="setting btn-label">
             <th scope="row"><label for="isShowBtnLabel"><?php echo __('Show Widget Label', 'codeastrology-whatsapp') ?></label></th>
             <td>

@@ -12,6 +12,7 @@ use CAT_WhatsApp\Helper;
     <div class="wa__popup_chat_box <%= settings.isLaunch ? 'wa__active wa__pending wa__lauch' : '' %>">
     <div class="wa__popup_heading">
         <div class="wa__popup_title"><%= settings.title %></div>
+        <div class="wa__popup_info"><%= settings.info %></div>
         <div class="wa__popup_intro"><%= settings.description %></div>
     </div>
     <!-- /.wa__popup_heading -->

@@ -7,16 +7,16 @@ class WPML
 {
     protected static $instance = null;
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
-            self::$instance->doHooks();
+            self::$instance->runHooks();
         }
         return self::$instance;
     }
 
-    private function doHooks(){
+    private function runHooks(){
         global $sitepress;
 
         if ($sitepress !== null && get_class($sitepress) === 'SitePress') {

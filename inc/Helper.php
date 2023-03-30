@@ -6,7 +6,7 @@ defined( 'ABSPATH' ) || exit;
 class Helper {
 
 	protected static $instance = null;
-	public static function getInstance() {
+	public static function run() {
 		if ( null == self::$instance ) {
 			self::$instance = new self();
 		}

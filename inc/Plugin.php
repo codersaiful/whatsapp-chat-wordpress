@@ -5,7 +5,7 @@ defined('ABSPATH') || exit;
 class Plugin {
   protected static $instance = null;
 
-  public static function getInstance() {
+  public static function run() {
     if (null == self::$instance) {
       self::$instance = new self;
     }
@@ -19,7 +19,7 @@ class Plugin {
   public static function activate() {
     $firstTimeActive = get_option('cat_wa_first_time_active');
     if ( $firstTimeActive === false ) { 
-      $waReview = \NJTWhatsAppReview::get_instance('cat_wa', 'WhatsApp Plugin', 'codeastrology-whatsapp');
+      $waReview = \CATWhatsAppReview::get_instance('cat_wa', 'WhatsApp Plugin', 'codeastrology-whatsapp');
       $waReview->need_update_option(1); // 1 day
       update_option('cat_wa_first_time_active', 1);
     }
@@ -30,7 +30,7 @@ class Plugin {
       // $filebirdCross->need_update_option();
 
       if ($firstTimeActive !== false) {
-        $waReview = \NJTWhatsAppReview::get_instance('cat_wa', 'WhatsApp Plugin', 'codeastrology-whatsapp');
+        $waReview = \CATWhatsAppReview::get_instance('cat_wa', 'WhatsApp Plugin', 'codeastrology-whatsapp');
         $waReview->need_update_option(7); // 1 day
       }
 

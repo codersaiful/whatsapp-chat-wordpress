@@ -10,11 +10,11 @@ class PostType
 {
     protected static $instance = null;
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
-            self::$instance->doHooks();
+            self::$instance->runHooks();
         }
         return self::$instance;
     }
@@ -24,7 +24,7 @@ class PostType
     {
     }
 
-    private function doHooks(){
+    private function runHooks(){
         add_action('init', array($this, 'register_post_type')); 
         add_action('save_post_cat_wa_accounts', [$this, 'save_account'], 10, 3);
         add_action('add_meta_boxes', [$this, 'add_meta_boxes']);

@@ -13,11 +13,11 @@ class Woocommerce
     protected static $isInserted = false;
     private $activeAccounts = array();
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
-            self::$instance->doHooks();
+            self::$instance->runHooks();
         }
         return self::$instance;
     }
@@ -27,7 +27,7 @@ class Woocommerce
     }
 
     
-    public function doHooks() {
+    public function runHooks() {
         add_action('init', [$this, 'init']);
     }
 
@@ -39,7 +39,7 @@ class Woocommerce
     public function init() {
         if ( !$this->isActiveWoocommerce() ) return;
         
-        $postType = PostType::getInstance();
+        $postType = PostType::run();
         $this->activeAccounts = $postType->get_active_woocommerce_accounts();
         $setting = Fields::getWoocommerceSetting();
 

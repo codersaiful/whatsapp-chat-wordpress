@@ -568,3 +568,15 @@ button.button.button-large.button-primary.wa-save {
 #cat-wa-switch:checked + label.green:after, .cat-wa-switch-control input:checked + label.green:after {
   background: #ffffff;
 }
+
+.cat-tabs-content {
+  input[type='text'] {
+    background: #ffffff;
+    border: 1px solid #041137;
+    border-radius: 5px;
+    height: 40px;
+    padding: 0 20px;
+    padding-right: 30px;
+    color: #041137;
+  }
+}

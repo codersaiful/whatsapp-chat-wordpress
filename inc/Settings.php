@@ -24,16 +24,16 @@ class Settings
 
     protected static $instance = null;
 
-    public static function getInstance()
+    public static function run()
     {
         if (null == self::$instance) {
             self::$instance = new self;
-            self::$instance->doHooks();
+            self::$instance->runHooks();
         }
         return self::$instance;
     }
 
-    private function doHooks(){
+    private function runHooks(){
         add_action('admin_init', [$this, 'register_setting']);
         add_action('admin_menu', [$this, 'admin_menu']);
         add_action('admin_enqueue_scripts', [$this, 'admin_enqueue_scripts']);
@@ -283,6 +283,7 @@ class Settings
 
         $new_input = Fields::getWidgetStyles();
         $new_input['title'] = sanitize_text_field(wp_unslash($_POST['title']));
+        $new_input['info'] = sanitize_text_field(wp_unslash($_POST['info']));
         $new_input['textColor'] = sanitize_hex_color($_POST['textColor']);
         $new_input['backgroundColor'] = sanitize_hex_color($_POST['backgroundColor']);
         $new_input['description'] = wp_kses_post(wp_unslash($_POST['description']));
@@ -366,7 +367,7 @@ class Settings
     public function load_accounts_ajax()
     {
         check_ajax_referer('cat_wa-nonce', 'nonce', true);
-        $postType = PostType::getInstance();
+        $postType = PostType::run();
         $accountsList = $postType->get_posts();
         $results = array_map(function ($account) {
             $meta = get_post_meta($account->ID, 'cat_wa_account_info', true);
